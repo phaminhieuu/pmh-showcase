@@ -6,6 +6,8 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   "rules": {
-    "@typescript-eslint/consistent-type-imports": "warn"
+    "@typescript-eslint/consistent-type-imports": 1,
+    "@typescript-eslint/no-explicit-any": 0,
+    "react/display-name": 0
   }
 }
