@@ -13,6 +13,11 @@ export const routes: Route[] = [
     name: 'Ballpit',
     path: '/ballpit',
     img: '/images/ballpit.webp'
+  },
+  {
+    name: 'Shader Images',
+    path: '/shader-images',
+    img: '/images/ballpit.webp'
   }
 ];
 
