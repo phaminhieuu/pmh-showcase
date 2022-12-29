@@ -17,7 +17,7 @@ export const routes: Route[] = [
   {
     name: 'Shader Images',
     path: '/shader-images',
-    img: '/images/ballpit.webp'
+    img: '/images/dao-1.jpeg'
   },
   {
     name: 'Instanced Vertex Color',

@@ -42,9 +42,9 @@ extend({ ImageFadeMaterial });
 const FadingImage: React.FC = () => {
   const ref = useRef<any>();
   const [texture1, texture2, dispTexture] = useTexture([
-    '/images/spherical-word.webp',
-    '/images/ballpit.webp',
-    '/images/hi-key-bubbles.webp'
+    '/images/dao-1.jpeg',
+    '/images/dao-2.jpeg',
+    '/images/displacement.jpeg'
   ]);
 
   const [hovered, setHovered] = useState(false);
@@ -62,7 +62,7 @@ const FadingImage: React.FC = () => {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <planeGeometry />
+      <planeGeometry args={[1, 1.7]} />
       {/* eslint-disable-next-line */}
       {/* @ts-ignore */}
       <imageFadeMaterial
