@@ -1,4 +1,7 @@
+import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
+import type { Route } from '../constants/routes';
 import { routes } from '../constants/routes';
 import type { CustomNextPage } from '../models/common';
 
@@ -9,14 +12,29 @@ const Page: CustomNextPage = () => {
 
       <div className='grid grid-flow-row grid-cols-auto gap-10'>
         {routes.map((route, index) => (
-          <Link href={route.path} key={index}>
-            <div className='grid h-60 place-items-center rounded-md border-2'>
-              {route.name}
-            </div>
-          </Link>
+          <Item {...route} key={index} />
         ))}
       </div>
     </div>
+  );
+};
+
+const Item: React.FC<Route> = (props) => {
+  const { name, path, img } = props;
+
+  return (
+    <Link href={path}>
+      <div className='group relative grid h-60 place-items-center overflow-hidden rounded-md duration-200 ease-out hover:scale-110'>
+        <Image src={img} alt={name} fill className='object-cover' />
+        <div
+          className={clsx(
+            'absolute top-full flex h-24 w-full items-center bg-gradient-to-t from-black/80 to-black/0 px-2 duration-200 ease-out group-hover:-translate-y-full'
+          )}
+        >
+          <p className='text-2xl'>{name}</p>
+        </div>
+      </div>
+    </Link>
   );
 };
 
