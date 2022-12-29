@@ -17,11 +17,11 @@ export async function getStaticProps() {
     props: {
       title: 'Hi-key Bubbles',
       canvas: {
-        position: [0, 0, 60],
+        camera: { position: [0, 0, 60] },
         fov: 75,
         near: 10,
         far: 150,
-        gl: { alpha: false, antialias: false },
+        gl: { antialias: false },
         shadows: true
       }
     }

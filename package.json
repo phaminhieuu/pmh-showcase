@@ -11,7 +11,9 @@
   "dependencies": {
     "@react-three/drei": "^9.48.1",
     "@react-three/fiber": "^8.9.1",
+    "@react-three/postprocessing": "^2.7.0",
     "next": "13.1.1",
+    "postprocessing": "^6.29.1",
     "random-words": "^1.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
