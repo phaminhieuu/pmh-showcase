@@ -18,6 +18,11 @@ export const routes: Route[] = [
     name: 'Shader Images',
     path: '/shader-images',
     img: '/images/ballpit.webp'
+  },
+  {
+    name: 'Instanced Vertex Color',
+    path: '/instanced-vertex-color',
+    img: '/images/instanced-vertex-color.webp'
   }
 ];
 
