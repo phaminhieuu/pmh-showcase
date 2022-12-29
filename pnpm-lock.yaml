@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@react-three/cannon': ^6.5.0
   '@react-three/drei': ^9.48.1
   '@react-three/fiber': ^8.9.1
   '@react-three/postprocessing': ^2.7.0
@@ -30,6 +31,7 @@ specifiers:
   zod: ^3.18.0
 
 dependencies:
+  '@react-three/cannon': 6.5.0_ysppi7zeppu5uqvfyzmx3hyopq
   '@react-three/drei': 9.48.1_cuekctkttqjec6nzdci24egcwe
   '@react-three/fiber': 8.9.1_4tzez3c2xpzuefjrvhpyy55bva
   '@react-three/postprocessing': 2.7.0_apy442gfwftbonstkdzutj33fm
@@ -296,6 +298,14 @@ packages:
       tslib: 2.4.1
     dev: true
 
+  /@pmndrs/cannon-worker-api/2.3.0_three@0.148.0:
+    resolution: {integrity: sha512-XFR/IABU6uIEllocfGBV9SVakQWIYrZq/Ijk2ZYTv2jYorDebvT4cW8GWIE6UO/T/NChpI+fBTGlUs6wwZW5sg==}
+    peerDependencies:
+      three: '>=0.139'
+    dependencies:
+      three: 0.148.0
+    dev: false
+
   /@react-spring/animated/9.6.1_react@18.2.0:
     resolution: {integrity: sha512-ls/rJBrAqiAYozjLo5EPPLLOb1LM0lNVQcXODTC1SMtS6DbuBCPaKco5svFUQFMP2dso3O+qcC4k9FsKc0KxMQ==}
     peerDependencies:
@@ -350,6 +360,23 @@ packages:
 
   /@react-spring/types/9.6.1:
     resolution: {integrity: sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==}
+    dev: false
+
+  /@react-three/cannon/6.5.0_ysppi7zeppu5uqvfyzmx3hyopq:
+    resolution: {integrity: sha512-C3ZC0bJwQAXQtvaNMURoVLISsbHfvASLhFmZSzseAfA6vEiza8RvcVsmByTPrKxF9udDpRmN9tQgtX6DA3deYg==}
+    peerDependencies:
+      '@react-three/fiber': '>=8'
+      react: '>=18'
+      three: '>=0.139'
+    dependencies:
+      '@pmndrs/cannon-worker-api': 2.3.0_three@0.148.0
+      '@react-three/fiber': 8.9.1_4tzez3c2xpzuefjrvhpyy55bva
+      cannon-es: 0.20.0
+      cannon-es-debugger: 1.0.0_ytqjmtckqwtsjebg6ktygbfp7u
+      react: 18.2.0
+      three: 0.148.0
+    transitivePeerDependencies:
+      - typescript
     dev: false
 
   /@react-three/drei/9.48.1_cuekctkttqjec6nzdci24egcwe:
@@ -871,6 +898,25 @@ packages:
 
   /caniuse-lite/1.0.30001441:
     resolution: {integrity: sha512-OyxRR4Vof59I3yGWXws6i908EtGbMzVUi3ganaZQHmydk1iwDhRnvaPG2WaR0KcqrDFKrxVZHULT396LEPhXfg==}
+
+  /cannon-es-debugger/1.0.0_ytqjmtckqwtsjebg6ktygbfp7u:
+    resolution: {integrity: sha512-sE9lDOBAYFKlh+0w+cvWKwUhJef8HYnUSVPWPL0jD15MAuVRQKno4QYZSGxgOoJkMR3mQqxL4bxys2b3RSWH8g==}
+    peerDependencies:
+      cannon-es: 0.x
+      three: 0.x
+      typescript: '>=3.8'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      cannon-es: 0.20.0
+      three: 0.148.0
+      typescript: 4.9.4
+    dev: false
+
+  /cannon-es/0.20.0:
+    resolution: {integrity: sha512-eZhWTZIkFOnMAJOgfXJa9+b3kVlvG+FX4mdkpePev/w/rP5V8NRquGyEozcjPfEoXUlb+p7d9SUcmDSn14prOA==}
+    dev: false
 
   /chalk/4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -2831,7 +2877,6 @@ packages:
     resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
