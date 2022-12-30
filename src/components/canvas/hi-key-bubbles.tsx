@@ -39,7 +39,7 @@ const HiKeyBubbles: React.FC = () => {
         opacity={0.6}
         scale={130}
         blur={1}
-        far={40}
+        far={100}
       />
       <EffectComposer multisampling={0}>
         <SSAO
@@ -64,7 +64,7 @@ const Bubbles: React.FC = () => {
     if (!ref.current) return;
     ref.current.rotation.y = MathUtils.damp(
       ref.current.rotation.y,
-      (-state.mouse.x * Math.PI) / 6,
+      (-state.mouse.x * Math.PI) / 2,
       2.75,
       delta
     );
@@ -79,7 +79,7 @@ const Bubbles: React.FC = () => {
       position={[0, 10, 0]}
     >
       <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial roughness={0} color='#f0f0f0' />
+      <meshStandardMaterial roughness={0} color='red' />
       {particles.map((data, index) => (
         <Bubble key={index} {...data} />
       ))}
