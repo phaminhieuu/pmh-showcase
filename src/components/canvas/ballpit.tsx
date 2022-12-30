@@ -21,7 +21,7 @@ const Ballpit: React.FC = () => {
       />
 
       <Physics
-        gravity={[0, -50, 0]}
+        gravity={[0, -10, 0]}
         defaultContactMaterial={{ restitution: 0.5 }}
       >
         <group position={[0, 0, -10]}>
@@ -32,7 +32,7 @@ const Ballpit: React.FC = () => {
       </Physics>
       <EffectComposer>
         <SSAO
-          radius={0.4}
+          radius={0.5}
           intensity={50}
           luminanceInfluence={0.4}
           color='red'
@@ -100,7 +100,7 @@ const Plane: React.FC<{ [key: string]: any }> = (props) => {
 const Mouse = () => {
   const { viewport } = useThree();
 
-  const [, api] = useSphere(() => ({ type: 'Kinematic', args: [6] }));
+  const [, api] = useSphere(() => ({ type: 'Kinematic', args: [4] }));
   return useFrame((state) =>
     api.position.set(
       (state.mouse.x * viewport.width) / 2,

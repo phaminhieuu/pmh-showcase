@@ -12,7 +12,7 @@ const tempColor = new THREE.Color();
 const niceColors = colors[17];
 
 const data = Array.from({ length: 1000 }, () => ({
-  color: (niceColors as string[])[Math.floor(Math.random() * 5)],
+  color: (niceColors as string[])[Math.floor(Math.random() * 5)] as string,
   scale: 1
 }));
 
@@ -27,21 +27,26 @@ const InstancedVertexColor: React.FC = () => {
 };
 
 const Boxes: React.FC = () => {
-  const [hovered, set] = useState();
+  const [hovered, setHovered] = useState<number | undefined>();
   const colorArray = useMemo(
     () =>
       Float32Array.from(
-        new Array(1000)
-          .fill(null)
-          // eslint-disable-next-line
-          // @ts-ignore
-          .flatMap((_, i) => tempColor.set(data[i].color).toArray())
+        new Array(1000).fill(null).flatMap((_, i) => {
+          const t = data[i];
+          const color = t ? t.color : '';
+          const res = tempColor.set(color).toArray();
+          console.log(res);
+          return res;
+        })
       ),
     []
   );
+
   const meshRef = useRef<any>();
   const prevRef = useRef<any>();
-  useEffect(() => void (prevRef.current = hovered), [hovered]);
+  useEffect(() => {
+    prevRef.current = hovered;
+  }, [hovered]);
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
@@ -88,10 +93,11 @@ const Boxes: React.FC = () => {
     <instancedMesh
       ref={meshRef}
       args={[undefined, undefined, 1000]}
-      // eslint-disable-next-line
-      // @ts-ignore
-      onPointerMove={(e) => (e.stopPropagation(), set(e.instanceId))}
-      onPointerOut={() => set(undefined)}
+      onPointerMove={(e) => {
+        e.stopPropagation();
+        setHovered(e.instanceId);
+      }}
+      onPointerOut={() => setHovered(undefined)}
     >
       <boxGeometry args={[0.6, 0.6, 0.6]}>
         <instancedBufferAttribute
@@ -114,7 +120,7 @@ const Post: React.FC = () => {
 
       {/* eslint-disable-next-line */}
       {/* @ts-ignore */}
-      <unrealBloomPass threshold={0.9} strength={0.75} radius={0.5} />
+      <unrealBloomPass threshold={0.9} strength={1} radius={0.5} />
     </Effects>
   );
 };
