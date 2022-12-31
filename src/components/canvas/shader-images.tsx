@@ -72,7 +72,6 @@ const FadingImage: React.FC = () => {
         disp={dispTexture}
         toneMapped={false}
       />
-      <shaderMaterial ref={ref} />
     </mesh>
   );
 };

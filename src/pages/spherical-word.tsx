@@ -16,7 +16,10 @@ export async function getStaticProps() {
   return {
     props: {
       title: 'Sherical word',
-      canvas: { camera: { position: [0, 0, 35] }, dpr: [1, 2], fov: 90 }
+      canvas: {
+        camera: { position: [0, 0, 35], fov: 90 },
+        dpr: [1, 2]
+      }
     }
   };
 }

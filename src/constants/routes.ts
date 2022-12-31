@@ -23,6 +23,11 @@ export const routes: Route[] = [
     name: 'Instanced Vertex Color',
     path: '/instanced-vertex-color',
     img: '/images/instanced-vertex-color.webp'
+  },
+  {
+    name: 'Raycast Cycling Stair',
+    path: '/raycast-cycling-stair',
+    img: '/images/raycast-cycling-stair.webp'
   }
 ];
 
