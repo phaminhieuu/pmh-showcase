@@ -15,3 +15,5 @@ export async function getStaticProps() {
     }
   };
 }
+
+export default Page;
