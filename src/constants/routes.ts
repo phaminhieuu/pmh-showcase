@@ -33,6 +33,11 @@ export const routes: Route[] = [
     name: 'Portal - ThreeJS Journey',
     path: '/portal',
     img: '/images/portal.png'
+  },
+  {
+    name: 'Reflectorplanes',
+    path: '/reflectorplanes',
+    img: '/images/reflectorplanes.png'
   }
 ];
 
