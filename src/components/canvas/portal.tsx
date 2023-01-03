@@ -4,24 +4,31 @@ import {
   useTexture,
   useGLTF
 } from '@react-three/drei';
-import { extend, useFrame } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { useLayoutEffect, useRef } from 'react';
 import { AdditiveBlending, Color } from 'three';
-import fragmentShader from '../../shaders/portal/fragment.glsl';
-import vertexShader from '../../shaders/portal/vertex.glsl';
+// import fragmentShader from '../../shaders/portal/fragment.glsl';
+// import vertexShader from '../../shaders/portal/vertex.glsl';
+
+// import glsl from 'babel-plugin-glsl/macro';
 
 const Portal: React.FC = () => {
-  const scale = Array.from({ length: 50 }, () => 0.5 + Math.random() * 4);
+  const scale = Array.from({ length: 20 }, () => 0.5 + Math.random() * 4);
+
+  console.log(scale);
 
   return (
     <>
-      <Sparkles
-        count={scale.length}
-        size={scale}
-        position={[0, 0.9, 0]}
-        scale={[4, 1.5, 4]}
-        speed={0.3}
-      />
+      {scale.map((num, index) => (
+        <Sparkles
+          key={index}
+          count={scale.length}
+          size={num}
+          position={[0, 0.9, 0]}
+          scale={[4, 1.5, 4]}
+          speed={0.3}
+        />
+      ))}
       <Model />
       <OrbitControls />
     </>
@@ -56,8 +63,8 @@ const Model: React.FC = (props) => {
         <shaderMaterial
           ref={portalMaterial}
           blending={AdditiveBlending}
-          fragmentShader={fragmentShader}
-          vertexShader={vertexShader}
+          // fragmentShader={fragmentShader}
+          // vertexShader={vertexShader}
         />
       </mesh>
       <mesh

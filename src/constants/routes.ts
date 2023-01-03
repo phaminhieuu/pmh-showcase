@@ -28,6 +28,11 @@ export const routes: Route[] = [
     name: 'Raycast Cycling Stair',
     path: '/raycast-cycling-stair',
     img: '/images/raycast-cycling-stair.webp'
+  },
+  {
+    name: 'Portal - ThreeJS Journey',
+    path: '/portal',
+    img: '/images/portal.png'
   }
 ];
 

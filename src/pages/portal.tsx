@@ -1,5 +1,9 @@
-import Portal from '../components/canvas/portal';
+import dynamic from 'next/dynamic';
 import type { CustomNextPage } from '../models/common';
+
+const Portal = dynamic(() => import('../components/canvas/portal'), {
+  ssr: false
+});
 
 const Page: CustomNextPage = () => {
   return <div></div>;
