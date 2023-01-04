@@ -1,6 +1,12 @@
-import { Scroll, ScrollControls, useScroll } from '@react-three/drei';
+import {
+  Scroll,
+  ScrollControls,
+  useScroll,
+  Image as ImageImpl
+} from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef, useState } from 'react';
+import { Color, Vector3 } from 'three';
 
 const ScrollControlsMinimap: React.FC = () => {
   return (
@@ -33,27 +39,74 @@ const Images: React.FC = () => {
   });
 
   return (
-    <group ref={group}>
-      <Image position={[-2, 0, 0]} scale={[4, height, 1]} url='/img1.jpg' />
-      <Image position={[2, 0, 1]} scale={3} url='/img6.jpg' />
-      <Image position={[-2.3, -height, 2]} scale={[1, 3, 1]} url='/trip2.jpg' />
-      <Image position={[-0.6, -height, 3]} scale={[1, 2, 1]} url='/img8.jpg' />
-      <Image position={[0.75, -height, 3.5]} scale={1.5} url='/trip4.jpg' />
+    <group ref={ref}>
       <Image
-        position={[0, -height * 1.5, 2.5]}
-        scale={[1.5, 3, 1]}
-        url='/img3.jpg'
+        position={new Vector3(-2, 0, 0)}
+        scale={[4, h]}
+        url='/images/furniture/1.jpg'
       />
       <Image
-        position={[0, -height * 2 - height / 4, 0]}
-        scale={[width, height / 2, 1]}
-        url='/img7.jpg'
+        position={new Vector3(2, 0, 1)}
+        scale={3}
+        url='/images/furniture/6.jpg'
+      />
+      <Image
+        position={new Vector3(-2.3, -h, 2)}
+        scale={[1, 3]}
+        url='/images/furniture/2.jpg'
+      />
+      <Image
+        position={new Vector3(-0.6, -h, 3)}
+        scale={[1, 2]}
+        url='/images/furniture/8.jpg'
+      />
+      <Image
+        position={new Vector3(0.75, -h, 3.5)}
+        scale={1.5}
+        url='/images/furniture/4.jpg'
+      />
+      <Image
+        position={new Vector3(0, -h * 1.5, 2.5)}
+        scale={[1.5, 3]}
+        url='/images/furniture/3.jpg'
+      />
+      <Image
+        position={new Vector3(0, -h * 2 - h / 4, 0)}
+        scale={[w, h / 2]}
+        url='/images/furniture/7.jpg'
       />
     </group>
   );
 };
 
-const Image: React.FC<Props> = () => {};
+interface Props {
+  url: string;
+  position: Vector3;
+  scale: [number, number] | number;
+}
+
+const Image: React.FC<Props> = ({ position, scale, url }) => {
+  const ref = useRef<any>();
+  const [hovered, setHovered] = useState(false);
+
+  useFrame(() => {
+    ref.current.material.color.lerp(
+      new Color(hovered ? 'white' : '#ccc'),
+      hovered ? 0.4 : 0.05
+    );
+  });
+
+  return (
+    <ImageImpl
+      url={url}
+      ref={ref}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+      position={position}
+      scale={scale}
+    />
+  );
+};
 
 const Html: React.FC = () => {
   return (
@@ -66,17 +119,17 @@ const Html: React.FC = () => {
           fontSize: '20em'
         }}
       >
-        to
+        home
       </h1>
       <h1
         style={{
           position: 'absolute',
           top: '120vh',
-          left: '60vw',
+          left: '40vw',
           fontSize: '20em'
         }}
       >
-        be
+        sweet
       </h1>
       <h1
         style={{
