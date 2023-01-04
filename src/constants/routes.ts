@@ -43,6 +43,11 @@ export const routes: Route[] = [
     name: 'Horizontal Tiles',
     path: '/horizontal-tiles',
     img: '/images/thumbnail/horizontal-tiles.webp'
+  },
+  {
+    name: 'Scrollcontrols with minimap',
+    path: '/scrollcontrols-minimap',
+    img: '/images/thumbnail/scrollcontrols-minimap.webp'
   }
 ];
 
