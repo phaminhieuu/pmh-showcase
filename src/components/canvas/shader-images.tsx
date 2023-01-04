@@ -42,9 +42,9 @@ extend({ ImageFadeMaterial });
 const FadingImage: React.FC = () => {
   const ref = useRef<any>();
   const [texture1, texture2, dispTexture] = useTexture([
-    '/images/dao-1.jpeg',
-    '/images/dao-2.jpeg',
-    '/images/displacement.jpeg'
+    '/images/my-love/dao-1.jpeg',
+    '/images/my-love/dao-2.jpeg',
+    '/images/shader-images/displacement.jpeg'
   ]);
 
   const [hovered, setHovered] = useState(false);

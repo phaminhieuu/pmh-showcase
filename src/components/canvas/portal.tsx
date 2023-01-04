@@ -15,8 +15,6 @@ import { AdditiveBlending, Color } from 'three';
 const Portal: React.FC = () => {
   const scale = Array.from({ length: 20 }, () => 0.5 + Math.random() * 4);
 
-  console.log(scale);
-
   return (
     <>
       {scale.map((num, index) => (
@@ -38,8 +36,8 @@ const Portal: React.FC = () => {
 const Model: React.FC = (props) => {
   const portalMaterial = useRef<any>();
 
-  const bakedTexture = useTexture('/images/baked-02.jpeg');
-  const { nodes } = useGLTF('/images/portal-2.glb');
+  const bakedTexture = useTexture('/images/portal/baked-02.jpeg');
+  const { nodes } = useGLTF('/images/portal/portal-2.glb');
 
   const model: any = nodes;
 

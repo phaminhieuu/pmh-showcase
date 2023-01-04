@@ -81,7 +81,7 @@ const Triangle = ({ color, ...props }: any) => {
     (_) =>
       (ref.current.position.y = -1.75 + Math.sin(_.clock.elapsedTime + r) / 10)
   );
-  const { paths: [path] } = useLoader(SVGLoader, '/images/triangle.svg') // prettier-ignore
+  const { paths: [path] } = useLoader(SVGLoader, '/images/reflectorplanes/triangle.svg') // prettier-ignore
   const geom = useMemo(
     () =>
       SVGLoader.pointsToStroke(
@@ -120,8 +120,8 @@ const Rig: React.FC<{ children: ReactNode[] }> = ({ children }) => {
 
 const Ground = () => {
   const [floor, normal] = useTexture([
-    '/images/SurfaceImperfections003_1K_var1.jpg',
-    '/images/SurfaceImperfections003_1K_Normal.jpg'
+    '/images/reflectorplanes/SurfaceImperfections003_1K_var1.jpg',
+    '/images/reflectorplanes/SurfaceImperfections003_1K_Normal.jpg'
   ]);
   const vec2 = new THREE.Vector2(2, 2);
   return (

@@ -35,7 +35,6 @@ const Boxes: React.FC = () => {
           const t = data[i];
           const color = t ? t.color : '';
           const res = tempColor.set(color).toArray();
-          console.log(res);
           return res;
         })
       ),
