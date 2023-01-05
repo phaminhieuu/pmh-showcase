@@ -53,6 +53,11 @@ export const routes: Route[] = [
     name: 'Infinite scroll',
     path: '/infinite-scroll',
     img: '/images/thumbnail/infinite-scroll.webp'
+  },
+  {
+    name: 'Simple audio analyser',
+    path: '/simple-audio-analyser',
+    img: '/images/thumbnail/simple-audio-analyser.webp'
   }
 ];
 
