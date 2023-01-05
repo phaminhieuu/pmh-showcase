@@ -137,7 +137,6 @@ const Ground = () => {
         position-y={-0.8}
       >
         {(Material, props) => (
-          // eslint-disable-next-line
           // @ts-ignore
           <Material
             color='#f0f0f0'

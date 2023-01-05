@@ -63,7 +63,6 @@ const FadingImage: React.FC = () => {
       onPointerOut={() => setHovered(false)}
     >
       <planeGeometry args={[1, 1.7]} />
-      {/* eslint-disable-next-line */}
       {/* @ts-ignore */}
       <imageFadeMaterial
         ref={ref}

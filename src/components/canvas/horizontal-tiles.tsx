@@ -161,7 +161,6 @@ const Minimap: React.FC = () => {
       {urls.map((_, index) => (
         <line
           key={index}
-          // eslint-disable-next-line
           // @ts-ignore
           geometry={geometry}
           material={material}

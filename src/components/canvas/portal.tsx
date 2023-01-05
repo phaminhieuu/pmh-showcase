@@ -7,10 +7,8 @@ import {
 import { useFrame } from '@react-three/fiber';
 import { useLayoutEffect, useRef } from 'react';
 import { AdditiveBlending, Color } from 'three';
-// import fragmentShader from '../../shaders/portal/fragment.glsl';
-// import vertexShader from '../../shaders/portal/vertex.glsl';
-
-// import glsl from 'babel-plugin-glsl/macro';
+import fragmentShader from '../../shaders/portal/fragment.glsl';
+import vertexShader from '../../shaders/portal/vertex.glsl';
 
 const Portal: React.FC = () => {
   const scale = Array.from({ length: 10 }, () => 0.5 + Math.random() * 4);
@@ -41,14 +39,17 @@ const Model: React.FC = (props) => {
 
   const model: any = nodes;
 
-  useFrame((delta) => (portalMaterial.current.uTime += delta));
+  useFrame(({ clock }) => {
+    const elapsedTime = clock.getElapsedTime();
+    portalMaterial.current.uniforms.uTime.value = elapsedTime;
+  });
 
   useLayoutEffect(() => {
     if (!portalMaterial) return;
     const uniforms = portalMaterial.current.uniforms;
-    uniforms.uTime = 0;
-    uniforms.uColorStart = new Color('hotpink');
-    uniforms.uColorEnd = new Color('white');
+    uniforms.uTime = { value: 0 };
+    uniforms.uColorStart = { value: new Color('hotpink') };
+    uniforms.uColorEnd = { value: new Color('white') };
   }, []);
 
   return nodes ? (
@@ -61,8 +62,8 @@ const Model: React.FC = (props) => {
         <shaderMaterial
           ref={portalMaterial}
           blending={AdditiveBlending}
-          // fragmentShader={fragmentShader}
-          // vertexShader={vertexShader}
+          vertexShader={vertexShader}
+          fragmentShader={fragmentShader}
         />
       </mesh>
       <mesh

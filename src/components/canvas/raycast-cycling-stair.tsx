@@ -24,10 +24,8 @@ const RaycastCyclingStair: React.FC = () => {
 
       {/* This component cycles through the raycast intersections, combine it with event.stopPropagation! */}
       <CycleRaycast
-        // eslint-disable-next-line
         // @ts-ignore
         onChanged={(objects, cycle) => {
-          // eslint-disable-next-line
           // @ts-ignore
           set({ objects, cycle });
         }}

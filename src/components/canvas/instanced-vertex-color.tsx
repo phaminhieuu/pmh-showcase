@@ -65,17 +65,14 @@ const Boxes: React.FC = () => {
           if (hovered !== prevRef.current) {
             (id === hovered
               ? tempColor.setRGB(10, 10, 10)
-              : // eslint-disable-next-line
-                // @ts-ignore
+              : // @ts-ignore
                 tempColor.set(data[id].color)
             ).toArray(colorArray, id * 3);
             meshRef.current.geometry.attributes.color.needsUpdate = true;
           }
 
-          // eslint-disable-next-line
           // @ts-ignore
           const scale = (data[id].scale = THREE.MathUtils.lerp(
-            // eslint-disable-next-line
             // @ts-ignore
             data[id].scale,
             id === hovered ? 2.5 : 1,
@@ -113,11 +110,9 @@ const Post: React.FC = () => {
   const { scene, camera } = useThree();
   return (
     <Effects disableGamma>
-      {/* eslint-disable-next-line */}
       {/* @ts-ignore */}
       <sSAOPass args={[scene, camera]} kernelRadius={0.5} maxDistance={0.1} />
 
-      {/* eslint-disable-next-line */}
       {/* @ts-ignore */}
       <unrealBloomPass threshold={0.9} strength={1} radius={0.5} />
     </Effects>
