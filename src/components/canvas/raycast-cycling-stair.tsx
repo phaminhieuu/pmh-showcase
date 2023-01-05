@@ -13,7 +13,7 @@ interface Props {
 }
 
 const RaycastCyclingStair: React.FC = () => {
-  const [{ objects, cycle }, set] = useState({ objects: [], cycle: 0 });
+  // const [{ objects, cycle }, set] = useState({ objects: [], cycle: 0 });
 
   return (
     <>
@@ -23,13 +23,7 @@ const RaycastCyclingStair: React.FC = () => {
       ))}
 
       {/* This component cycles through the raycast intersections, combine it with event.stopPropagation! */}
-      <CycleRaycast
-        // @ts-ignore
-        onChanged={(objects, cycle) => {
-          // @ts-ignore
-          set({ objects, cycle });
-        }}
-      />
+      <CycleRaycast />
     </>
   );
 };
@@ -74,6 +68,7 @@ const Stair: React.FC<Props> = ({ index }) => {
       <boxGeometry args={[2, 6, 0.075]} />
       <meshStandardMaterial
         roughness={1}
+        metalness={1}
         transparent
         opacity={0.6}
         color={clicked ? 'violet' : hovered ? 'aquamarine' : 'white'}

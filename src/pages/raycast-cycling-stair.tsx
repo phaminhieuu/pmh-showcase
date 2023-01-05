@@ -9,7 +9,7 @@ const RaycastCyclingStair = dynamic(
 );
 
 const Page: CustomNextPage = () => {
-  return <div className='fixed inset-0 bg-[#252525]'></div>;
+  return <div className='fixed inset-0 bg-white/90'></div>;
 };
 
 Page.Canvas = () => <RaycastCyclingStair />;
@@ -21,7 +21,7 @@ export async function getStaticProps() {
       canvas: {
         shadows: true,
         camera: { position: [-10, 10, 5], fov: 50 },
-        dpr: 1.5
+        dpr: [1, 1.5]
       }
     }
   };
