@@ -42,8 +42,8 @@ extend({ ImageFadeMaterial });
 const FadingImage: React.FC = () => {
   const ref = useRef<any>();
   const [texture1, texture2, dispTexture] = useTexture([
-    '/images/my-love/dao-1.jpeg',
-    '/images/my-love/dao-2.jpeg',
+    '/images/my-love/1.jpeg',
+    '/images/my-love/2.jpeg',
     '/images/shader-images/displacement.jpeg'
   ]);
 

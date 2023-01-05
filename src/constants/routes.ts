@@ -42,17 +42,17 @@ export const routes: Route[] = [
   {
     name: 'Horizontal Tiles',
     path: '/horizontal-tiles',
-    img: '/images/thumbnail/horizontal-tiles.webp'
+    img: '/images/thumbnail/horizontal-tiles-2.png'
   },
   {
     name: 'Scrollcontrols with minimap',
     path: '/scrollcontrols-minimap',
-    img: '/images/thumbnail/scrollcontrols-minimap.webp'
+    img: '/images/thumbnail/scrollcontrols-minimap-2.png'
   },
   {
     name: 'Infinite scroll',
     path: '/infinite-scroll',
-    img: '/images/thumbnail/infinite-scroll.webp'
+    img: '/images/thumbnail/infinite-scroll-2.png'
   },
   {
     name: 'Simple audio analyser',

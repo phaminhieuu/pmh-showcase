@@ -44,37 +44,37 @@ const Images: React.FC = () => {
       <Image
         position={new Vector3(-2, 0, 0)}
         scale={[4, h]}
-        url='/images/furniture/1.jpg'
+        url='/images/my-love/1.jpeg'
       />
       <Image
         position={new Vector3(2, 0, 1)}
         scale={3}
-        url='/images/furniture/6.jpg'
+        url='/images/my-love/6.jpeg'
       />
       <Image
         position={new Vector3(-2.3, -h, 2)}
         scale={[1, 3]}
-        url='/images/furniture/2.jpg'
+        url='/images/my-love/2.jpeg'
       />
       <Image
         position={new Vector3(-0.6, -h, 3)}
         scale={[1, 2]}
-        url='/images/furniture/8.jpg'
+        url='/images/my-love/8.jpeg'
       />
       <Image
         position={new Vector3(0.75, -h, 3.5)}
         scale={1.5}
-        url='/images/furniture/4.jpg'
+        url='/images/my-love/4.jpeg'
       />
       <Image
         position={new Vector3(0, -h * 1.5, 2.5)}
         scale={[1.5, 3]}
-        url='/images/furniture/3.jpg'
+        url='/images/my-love/3.jpeg'
       />
       <Image
         position={new Vector3(0, -h * 2 - h / 4, 0)}
         scale={[w, h / 2]}
-        url='/images/furniture/7.jpg'
+        url='/images/my-love/14.jpeg'
       />
     </group>
   );

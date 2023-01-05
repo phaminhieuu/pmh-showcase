@@ -68,49 +68,49 @@ const Pages: React.FC = () => {
       <Page
         position={new Vector3(-w * 1, 0, 0)}
         urls={[
-          '/images/furniture/7.jpg',
-          '/images/furniture/8.jpg',
-          '/images/furniture/9.jpg'
+          '/images/my-love/7.jpeg',
+          '/images/my-love/8.jpeg',
+          '/images/my-love/9.jpeg'
         ]}
       />
       <Page
         position={new Vector3(w * 0, 0, 0)}
         urls={[
-          '/images/furniture/1.jpg',
-          '/images/furniture/2.jpg',
-          '/images/furniture/3.jpg'
+          '/images/my-love/1.jpeg',
+          '/images/my-love/2.jpeg',
+          '/images/my-love/3.jpeg'
         ]}
       />
       <Page
         position={new Vector3(w * 1, 0, 0)}
         urls={[
-          '/images/furniture/4.jpg',
-          '/images/furniture/5.jpg',
-          '/images/furniture/6.jpg'
+          '/images/my-love/4.jpeg',
+          '/images/my-love/5.jpeg',
+          '/images/my-love/6.jpeg'
         ]}
       />
       <Page
         position={new Vector3(w * 2, 0, 0)}
         urls={[
-          '/images/furniture/7.jpg',
-          '/images/furniture/8.jpg',
-          '/images/furniture/9.jpg'
+          '/images/my-love/7.jpeg',
+          '/images/my-love/8.jpeg',
+          '/images/my-love/9.jpeg'
         ]}
       />
       <Page
         position={new Vector3(w * 3, 0, 0)}
         urls={[
-          '/images/furniture/1.jpg',
-          '/images/furniture/2.jpg',
-          '/images/furniture/3.jpg'
+          '/images/my-love/1.jpeg',
+          '/images/my-love/2.jpeg',
+          '/images/my-love/3.jpeg'
         ]}
       />
       <Page
         position={new Vector3(w * 4, 0, 0)}
         urls={[
-          '/images/furniture/4.jpg',
-          '/images/furniture/5.jpg',
-          '/images/furniture/6.jpg'
+          '/images/my-love/4.jpeg',
+          '/images/my-love/5.jpeg',
+          '/images/my-love/6.jpeg'
         ]}
       />
     </>
