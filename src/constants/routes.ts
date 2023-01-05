@@ -58,6 +58,11 @@ export const routes: Route[] = [
     name: 'Simple audio analyser',
     path: '/simple-audio-analyser',
     img: '/images/thumbnail/simple-audio-analyser.webp'
+  },
+  {
+    name: 'Bouncy watch',
+    path: '/bouncy-watch',
+    img: '/images/thumbnail/bouncy-watch.webp'
   }
 ];
 
