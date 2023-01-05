@@ -48,6 +48,11 @@ export const routes: Route[] = [
     name: 'Scrollcontrols with minimap',
     path: '/scrollcontrols-minimap',
     img: '/images/thumbnail/scrollcontrols-minimap.webp'
+  },
+  {
+    name: 'Infinite scroll',
+    path: '/infinite-scroll',
+    img: '/images/thumbnail/infinite-scroll.webp'
   }
 ];
 
