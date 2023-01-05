@@ -13,7 +13,7 @@ import { AdditiveBlending, Color } from 'three';
 // import glsl from 'babel-plugin-glsl/macro';
 
 const Portal: React.FC = () => {
-  const scale = Array.from({ length: 20 }, () => 0.5 + Math.random() * 4);
+  const scale = Array.from({ length: 10 }, () => 0.5 + Math.random() * 4);
 
   return (
     <>

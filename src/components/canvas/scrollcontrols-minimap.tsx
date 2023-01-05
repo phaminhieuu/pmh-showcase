@@ -24,6 +24,7 @@ const ScrollControlsMinimap: React.FC = () => {
 const Images: React.FC = () => {
   const { width: w, height: h } = useThree((state) => state.viewport);
   const data = useScroll();
+
   const ref = useRef<any>();
 
   useFrame(() => {
