@@ -63,6 +63,11 @@ export const routes: Route[] = [
     name: 'Bouncy watch',
     path: '/bouncy-watch',
     img: '/images/thumbnail/bouncy-watch.webp'
+  },
+  {
+    name: 'Water shader',
+    path: '/water-shader',
+    img: '/images/thumbnail/water-shader.webp'
   }
 ];
 
