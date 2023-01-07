@@ -55,6 +55,11 @@ export const routes: Route[] = [
     img: '/images/thumbnail/infinite-scroll-2.png'
   },
   {
+    name: 'Scroll with GLTF',
+    path: '/scroll-gltf',
+    img: '/images/thumbnail/scroll-gltf.webp'
+  },
+  {
     name: 'Simple audio analyser',
     path: '/simple-audio-analyser',
     img: '/images/thumbnail/simple-audio-analyser.webp'
