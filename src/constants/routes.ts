@@ -73,6 +73,11 @@ export const routes: Route[] = [
     name: 'Water shader',
     path: '/water-shader',
     img: '/images/thumbnail/water-shader.webp'
+  },
+  {
+    name: 'Image Gallery',
+    path: '/image-gallery',
+    img: '/images/thumbnail/image-gallery.webp'
   }
 ];
 

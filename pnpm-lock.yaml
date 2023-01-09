@@ -40,6 +40,7 @@ specifiers:
   three-stdlib: ^2.21.1
   typescript: ^4.8.4
   url-loader: ^4.1.1
+  uuid-by-string: ^4.0.0
   valtio: ^1.8.0
   webpack: ^5.75.0
   zod: ^3.18.0
@@ -63,6 +64,7 @@ dependencies:
   suspend-react: 0.0.9_react@18.2.0
   three: 0.148.0
   three-stdlib: 2.21.1_three@0.148.0
+  uuid-by-string: 4.0.0
   valtio: 1.8.0_fzgpatadwft34edcveyjcofata
   zod: 3.20.2
 
@@ -4004,9 +4006,17 @@ packages:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
+  /js-md5/0.7.3:
+    resolution: {integrity: sha512-ZC41vPSTLKGwIRjqDh8DfXoCrdQIyBgspJVPXHBGu4nZlAEvG3nf+jO9avM9RmLiGakg7vz974ms99nEV0tmTQ==}
+    dev: false
+
   /js-sdsl/4.2.0:
     resolution: {integrity: sha512-dyBIzQBDkCqCu+0upx25Y2jGdbTGxE9fshMsCdK0ViOongpV+n5tXRcZY9v7CaVQ79AGS9KA1KHtojxiM7aXSQ==}
     dev: true
+
+  /js-sha1/0.6.0:
+    resolution: {integrity: sha512-01gwBFreYydzmU9BmZxpVk6svJJHrVxEN3IOiGl6VO93bVKYETJ0sIth6DASI6mIFdt7NmfX9UiByRzsYHGU9w==}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -5731,6 +5741,13 @@ packages:
   /utility-types/3.10.0:
     resolution: {integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==}
     engines: {node: '>= 4'}
+    dev: false
+
+  /uuid-by-string/4.0.0:
+    resolution: {integrity: sha512-88ZSfcSkN04juiLqSsuyteqlSrXNFdsEPzSv3urnElDXNsZUXQN0smeTnh99x2DE15SCUQNgqKBfro54CuzHNQ==}
+    dependencies:
+      js-md5: 0.7.3
+      js-sha1: 0.6.0
     dev: false
 
   /valtio/1.8.0_fzgpatadwft34edcveyjcofata:

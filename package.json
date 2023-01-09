@@ -27,6 +27,7 @@
     "suspend-react": "^0.0.9",
     "three": "^0.148.0",
     "three-stdlib": "^2.21.1",
+    "uuid-by-string": "^4.0.0",
     "valtio": "^1.8.0",
     "zod": "^3.18.0"
   },
