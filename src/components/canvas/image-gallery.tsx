@@ -1,6 +1,8 @@
 import { Environment, MeshReflectorMaterial } from '@react-three/drei';
 import { useEffect, useRef, useState } from 'react';
 
+const GOLDENRATIO = 1.61803398875;
+
 const pexel = (id: number) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`;
 const images: ImageProps[] = [
@@ -80,10 +82,10 @@ type ImageProps = {
 
 const Frames: React.FC<{ images: ImageProps[] }> = ({ images }) => {
   const ref = useRef<any>();
-  const clicked = useRef();
+  // const clicked = useRef();
 
   useEffect(() => {
-    clicked.current;
+    // clicked.current = ref.current.getObjectByName(params?.id);
   });
 
   return (
@@ -93,18 +95,18 @@ const Frames: React.FC<{ images: ImageProps[] }> = ({ images }) => {
         e.stopPropagation();
       }}
     >
-      {images.map((props) => (
-        <Frame key={props.url} {...props} />
-      ))}
+      {/* {images.map((props) => ( */}
+      {/*   <Frame key={props.url} {...props} /> */}
+      {/* ))} */}
     </group>
   );
 };
 
-const Frame: React.FC<ImageProps> = ({ position, rotation }) => {
-  console.log(props);
-  const [hovered, setHovered] = useState(false);
-  const [rnd] = useState(() => Math.random());
-  return <></>;
-};
+// const Frame: React.FC<ImageProps> = ({ position, rotation }) => {
+//   console.log(props);
+//   const [hovered, setHovered] = useState(false);
+//   const [rnd] = useState(() => Math.random());
+//   return <></>;
+// };
 
 export default ImageGallery;
