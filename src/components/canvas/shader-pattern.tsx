@@ -1,5 +1,5 @@
 import { OrbitControls } from '@react-three/drei';
-import * as THREE from 'three';
+// import * as THREE from 'three';
 // @ts-ignore
 import fragmentShader from '../../shaders/shader-pattern/fragment.glsl';
 
@@ -12,7 +12,7 @@ const ShaderPattern: React.FC = () => {
       <mesh>
         <planeGeometry args={[2, 2, 32, 32]} />
         <shaderMaterial
-          side={THREE.DoubleSide}
+          // side={THREE.DoubleSide}
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
         />

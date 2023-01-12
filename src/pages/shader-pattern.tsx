@@ -17,7 +17,7 @@ Page.Canvas = () => <ShaderPattern />;
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Ballpit',
+      title: 'Shader pattern',
       canvas: {
         dpr: [1, 2],
         camera: { position: [1, 1, 2], fov: 75, near: 0.1, far: 100 },
