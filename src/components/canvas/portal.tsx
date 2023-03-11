@@ -10,7 +10,7 @@ import { AdditiveBlending, Color } from 'three';
 // @ts-ignore
 import fragmentShader from '../../shaders/portal/fragment.glsl';
 
-// @ts-ignore
+//@ts-ignore
 import vertexShader from '../../shaders/portal/vertex.glsl';
 
 const Portal: React.FC = () => {
