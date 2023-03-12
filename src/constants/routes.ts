@@ -83,6 +83,11 @@ export const routes: Route[] = [
     name: 'Shader pattern',
     path: '/shader-pattern',
     img: '/images/thumbnail/shader-pattern.png'
+  },
+  {
+    name: 'Video particle',
+    path: '/video-particle',
+    img: '/images/thumbnail/video-particle.png'
   }
 ];
 

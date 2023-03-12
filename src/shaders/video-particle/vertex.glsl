@@ -3,6 +3,7 @@ uniform float distortion;
 varying vec2 vUv;
 varying vec3 vPosition;
 uniform sampler2D t;
+uniform sampler2D t1;
 float PI = 3.141592653589793238;
 
 vec3 mod289(vec3 x)

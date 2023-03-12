@@ -34,11 +34,18 @@ const VideoParticle = () => {
     uniforms.t = {
       value: new THREE.TextureLoader().load('/images/video-particle/end.jpeg')
     };
-    uniforms.distortion = { value: distortion };
+
+    uniforms.t1 = {
+      value: new THREE.TextureLoader().load('/images/video-particle/start.jpeg')
+    };
+    uniforms.distortion = { value: 0 };
+    uniforms.progress = { value: 0 };
   }, [distortion]);
 
   useEffect(() => {
-    const video = document.getElementById('video');
+    const video: HTMLVideoElement | null = document.getElementById(
+      'video'
+    ) as HTMLVideoElement;
     if (!video || !shader.current || !bloom.current) return;
     video.addEventListener('ended', () => {
       gsap.to(video, { duration: 0.1, opacity: 0 });
@@ -55,15 +62,38 @@ const VideoParticle = () => {
         ease: 'power2.inOut'
       });
 
-      gsap.to(bloom.current, { duration: 2, intensity: 10, ease: 'power2.in' });
+      gsap.to(bloom.current, {
+        duration: 2,
+        intensity: 20,
+        ease: 'power2.in'
+      });
+
       gsap.to(bloom.current, {
         duration: 2,
         intensity: 0,
         delay: 2,
-        ease: 'power2.out'
+        ease: 'power2.out',
+        onComplete: () => {
+          video.currentTime = 0;
+          video.play();
+
+          gsap.to(video, { duration: 0.1, opacity: 1 });
+
+          gsap.to(shader.current.uniforms.progress, {
+            duration: 1,
+            delay: 1.5,
+            value: 0
+          });
+        }
+      });
+
+      gsap.to(shader.current.uniforms.progress, {
+        duration: 1,
+        delay: 1.5,
+        value: 1
       });
     });
-  }, [distortion]);
+  }, []);
 
   return (
     <>

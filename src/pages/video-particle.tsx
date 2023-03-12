@@ -20,7 +20,6 @@ const Page: CustomNextPage = () => {
 
   return (
     <div className='fixed z-[1000] h-screen w-screen opacity-100 duration-200 ease-out'>
-      current
       <div className='pointer-events-none absolute top-1/2 left-1/2 box-border h-[68.5vh] w-[40vh] -translate-y-1/2 -translate-x-1/2 overflow-hidden'>
         <video
           className='h-full w-full object-fill'
