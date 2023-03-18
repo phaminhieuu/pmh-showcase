@@ -88,6 +88,11 @@ export const routes: Route[] = [
     name: 'Video particle',
     path: '/video-particle',
     img: '/images/thumbnail/video-particle.png'
+  },
+  {
+    name: 'Draggable',
+    path: '/draggable',
+    img: '/images/thumbnail/draggable.png'
   }
 ];
 

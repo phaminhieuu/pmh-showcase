@@ -1,4 +1,5 @@
 varying vec2 vUv;
+varying vec2 vPos;
 
 void main() {
   vec4 modelPosition = modelMatrix * vec4(position, 1.0);
@@ -8,4 +9,5 @@ void main() {
   gl_Position = projectionPosition;
 
   vUv = uv;
+  vPos = position.xy;
 }
