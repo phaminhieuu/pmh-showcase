@@ -10,8 +10,15 @@ vec2 rotate(vec2 uv, float rotation, vec2 mid) {
 
 float random(in vec2 st){ return fract(sin(dot(st.xy ,vec2(12.9898,78.233))) * 43758.5453); }
 
-float circleshape(vec2 position, float radius){
+float circleshape(vec2 position, float radius) {
   return step(radius, length(vPos));
+}
+
+float rectshape(vec2 position, vec2 size){
+  return max(
+    step(size.x, abs(position.x - 0.5)),
+    step(size.y, abs(position.y - 0.5))
+  );
 }
 
 void main(){
@@ -26,7 +33,8 @@ void main(){
   vec3 mixedColor = mix(blackColor, uvColor, strength);
 
   float circle = circleshape(vPos, 1.);
-  vec3 color = vec3(circle);
+  float rect = rectshape(vPos, vec2(1., 0.3));
+  vec3 color = vec3(rect);
 
   // gl_FragColor = vec4(mixedColor, 1.0);   
   gl_FragColor = vec4(color, 1.0);   

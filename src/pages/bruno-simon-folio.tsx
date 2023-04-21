@@ -2,6 +2,10 @@ import dynamic from 'next/dynamic';
 import { LinearEncoding, NoToneMapping } from 'three';
 import type { CustomNextPage } from '../models/common';
 
+const Debug = dynamic(() => import('components/ui/bruno-simon-folio/debug'), {
+  ssr: false
+});
+
 const BrunoSimonFolio = dynamic(
   () => import('../components/canvas/bruno-simon-folio'),
   {
@@ -10,7 +14,7 @@ const BrunoSimonFolio = dynamic(
 );
 
 const Page: CustomNextPage = () => {
-  return <div></div>;
+  return <Debug />;
 };
 
 Page.Canvas = () => <BrunoSimonFolio />;
@@ -20,15 +24,15 @@ export async function getStaticProps() {
     props: {
       title: 'Bruno Simon Folio',
       canvas: {
-        camera: { position: [1.135, -1.45, 1.15], fov: 40, near: 1, far: 80 },
-        shadows: true
-      },
-      gl: {
-        pixelRatio: 2,
-        physicallyCorrectLights: true,
-        autoClear: false,
-        outputEncoding: LinearEncoding,
-        toneMapping: NoToneMapping
+        camera: { fov: 40, near: 1, far: 80 },
+        shadows: true,
+        gl: {
+          pixelRatio: 2,
+          physicallyCorrectLights: true,
+          autoClear: false,
+          outputEncoding: LinearEncoding,
+          toneMapping: NoToneMapping
+        }
       }
     }
   };

@@ -1,3 +1,4 @@
+#version 330 core
 varying vec2 vUv;
 
 void main() {
@@ -8,4 +9,5 @@ void main() {
     gl_Position = projectionPosition;
 
     vUv = uv;
+
 }
